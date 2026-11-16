@@ -1,0 +1,41 @@
+{
+  "name": "video_editor",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "tts:cli": "python3 tools/capcut_tts_cli.py",
+    "tts:voices": "python3 tools/capcut_tts_cli.py --list-voices"
+  },
+  "dependencies": {
+    "@diffusionstudio/piper-wasm": "1.0.0",
+    "@diffusionstudio/vits-web": "1.0.3",
+    "@fontsource/bebas-neue": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/oswald": "^5.3.0",
+    "@fontsource/pacifico": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "lucide-react": "^1.72.0",
+    "mp4-muxer": "^5.2.2",
+    "onnxruntime-web": "1.18.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "webm-muxer": "^5.1.4",
+    "zustand": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.90.0",
+    "playwright": "^1.65.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6"
+  }
+}

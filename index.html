@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07070b" />
+    <meta
+      name="description"
+      content="ClipPro is a browser-native video editor. Create, cut and wow with a magnetic timeline, effects, captions, audio tools and private on-device export."
+    />
+    <meta property="og:title" content="ClipPro — Create. Cut. Wow." />
+    <meta
+      property="og:description"
+      content="A fast, private, browser-native video editor with a magnetic timeline, original assets and WebCodecs export."
+    />
+    <meta property="og:type" content="website" />
+    <!-- PWA Meta Tags (works everywhere, no CORS needed) -->
+    <meta name="apple-mobile-web-app-title" content="ClipPro" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <!-- Manifest defined as data-URI to avoid CORS entirely -->
+    <script>
+      // Safe manifest — data-URI, no CORS, works in Cloud Shell & all browsers
+      const manifestData = {
+        name: 'ClipPro',
+        short_name: 'ClipPro',
+        description: 'A fast, private, browser-native video editor. Create, cut and wow.',
+        theme_color: '#07070b',
+        background_color: '#07070b',
+        display: 'standalone',
+        display_override: ['window-controls-overlay', 'standalone'],
+        orientation: 'any',
+        scope: '.',
+        start_url: '.',
+        icons: [
+          { src: '/favicon.svg', sizes: 'any', type: 'image/svg+xml' },
+          { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+          { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
+          { src: '/icons/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }
+        ],
+        shortcuts: [
+          {
+            name: 'New project',
+            short_name: 'New',
+            description: 'Open ClipPro on the project home screen',
+            url: '/?new=1',
+            icons: [{ src: '/icons/icon-192.png', sizes: '192x192' }]
+          }
+        ]
+      };
+      // Inject manifest as data-URI (no CORS, works everywhere)
+      const link = document.createElement('link');
+      link.rel = 'manifest';
+      link.href = 'data:application/manifest+json;charset=utf-8,' + encodeURIComponent(JSON.stringify(manifestData));
+      document.head.appendChild(link);
+    </script>
+    <title>ClipPro — Create. Cut. Wow.</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
